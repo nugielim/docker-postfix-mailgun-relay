@@ -8,10 +8,10 @@ if [ ! -z "${SYSTEM_TIMEZONE}" ]; then
 fi
 
 # Set mynetworks for postfix relay
-#if [ ! -z "${MYNETWORKS}" ]; then
-#    echo "setting mynetworks = ${MYNETWORKS}"
-#    postconf -e mynetworks="${MYNETWORKS}"
-#fi
+if [ ! -z "${MYNETWORKS}" ]; then
+   echo "setting mynetworks = ${MYNETWORKS}"
+   postconf -e mynetworks="${MYNETWORKS}"
+fi
 
 # General the email/password hash and remove evidence.
 if [ ! -z "${EMAIL}" ] && [ ! -z "${EMAILPASS}" ]; then
